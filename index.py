@@ -194,7 +194,7 @@ def greeting(name, age=28, color='red'):
     # Greets user with 'name' from 'input box' and 'age' next year, if variable, default age is used
     # Also includes favorite color
     print("Hello " + name.capitalize() + ", you will be " + str(age+1) + " years old next birthday!")
-    print(f"Hello {name.capitalize()}, you will be {age+1} next birthday!")
+    print(f"Hello {name.capitalize()}, you will be {age+1} years old next birthday!")
     print(f'We hear you like the color {color}!')
 name = input("Enter your name: ")
 age = input("Enter your age: ")
