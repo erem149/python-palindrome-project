@@ -9,8 +9,7 @@ print(msg.count('o'))
 #slicing
 msg1=msg[-10] + ' ' + msg[:7] + ' ' + msg[-5:-1] + ' ' +  msg[8:10] + ' ' + msg[13] + msg[12] + msg[2] + msg[1] + msg[-5]
 print(msg1[::-1].title()) # printed "1 Welcome Ring To Tyler" as backwards
-print('Python' not in msg) # we can use 'not' or 'not in' commands
-                           #to describe whether it's TRUE or FALSE
+print('Python' not in msg) # we can use 'not' or 'not in' commands to describe whether it's TRUE or FALSE
 print(f'[{pronouns.capitalize()} lovely day!]')
 # # - Create a distance converter converting Km to miles
 # # - Take two inputs from user: Their first name and the distance in km
@@ -240,3 +239,21 @@ def value_added_taxt(amount):
     return f"{amount}, {tax}, {total_amount}"
 price = value_added_taxt(100)
 print(price, type(price)) # Output: <class 'str'>
+
+# Comparisons and Boolean
+a = 7
+b = 3
+print('a == b is ', a == b) # Output: False
+print('a != b is ', a != b) # Output: False
+print('a > b is ', a > b) # Output: False
+print('a < b is ', a < b) # Output: False
+print('a >= b is ', a >= b) # Output: False
+print('a <= b is ', a <= b) # we can use ==, >, <, >=, <=. Output: False
+print('o' in 'John') # Output: True
+print('o' not in 'John') # Output: False
+print(a is b) # Output: True
+print(id(a), id(b)) # Output: Same memory
+a = [3,7,42]
+b = [3,7,42]
+print(a is b) # Output: False
+print(id(a), id(b)) # Output: Different memory
