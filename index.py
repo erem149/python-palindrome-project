@@ -413,3 +413,35 @@ def num_days(month):
     print('number of days in', month, 'is', days)
 
 num_days('sep')
+
+#OPTIMIZATION
+def calculator():
+    print("\n===Welcome to the Calculator_OPT_===")
+    num1 = float(input("Enter the first number: "))
+    mode = input("Which math operation do you want to used (+,-,*,/): ")
+    num2 = float(input("Enter the second number: "))
+    if (mode == '+'):
+        result = num1 + num2
+    elif (mode == '-'):
+        result = num1 - num2
+    elif (mode == '*'):
+        result = num1 * num2
+    elif (mode == '/'):
+        result = num1 / num2
+    else:
+        print("Wrong input.. kindly enter the proper operator that available~")
+    print(f'Result: {result}')
+
+def temperature():
+    print("\n===Welcome to the Temperature Converter (Celcius to Fahreinheit)===")
+    celcius = float(input("Enter your temp in celcius: "))
+    print(f'{celcius} Celcius is equivalent to {(celcius*9/5) + 32} Fahreinheit')
+
+switch = input("\nWhat type of service do you want to use: \n1. Calculator\n2. Temperature Converter\nEnter the number 1 to 2: ")
+if(switch == '1'):
+    calculator()
+elif(switch == '2'):
+    temperature()
+else:
+    print("Wrong input.. Kindly enter the number 1 or 2~")
+
