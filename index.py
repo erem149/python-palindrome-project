@@ -671,3 +671,40 @@ my_list = [1, 5, -3, 7, -2]
 my_llist = [['car',4,65], ['dog',2,30], ['add',3,10], ['bee',1,24]]
 print(sorted(my_list, key = abs)) # we can added any function to this key
 print(sorted(my_llist, key = lambda item : item[2]))
+
+# Dictionaries
+print("{Dictionaries}")
+movie = {
+    'title' : 'Life of Brian',
+    'year' : 1979,
+    'cast' : ['John', 'Eric', 'Michael', 'George', 'Terry']
+}
+print(movie)
+print(movie['title'])
+# print(movie['budget']) # doesn't exist and will get an error
+print(movie.get('budget'))
+print(movie.get('budget', 'not found')) 
+movie['title'] = 'The Holy Grail'
+print(movie.get('title'))
+movie['budget'] = 250000
+print(movie.get('budget'))
+movie.update({'title' : 'The Holy Grail', 'year' : 1975, 'cast' : ['John', 'Eric', 'Michael', 'George', 'Terry']})
+print(movie)
+# del movie['year']
+year = movie.pop('year') # this is the alternative of del
+print(year)
+print(movie)
+
+print(len(movie))
+print(movie.keys())
+print(movie.values())
+print(movie.items()) # tuple
+for key in movie:
+    print(key)
+for key, value in movie.items():
+    print(key, value)
+
+# Dictionaries - II
+python = {'John':35, 'Eric':36, 'Michael':35, 'Terry':38, 'Graham':37, 'TerryG':34}
+holy_grail = {'Arthur':40, 'Galahad':35, 'Lancelot':39, 'Knight of NI':40, 'Zoot':17}
+life_of_brian = {'Brian':33, 'Reg':35, 'Stan/Loretta':32, 'Biccus Diccus':45}
