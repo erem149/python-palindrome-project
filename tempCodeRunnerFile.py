@@ -1,0 +1,1 @@
+my_file = open('greeting.txt', 'r') #w = write, a=append
