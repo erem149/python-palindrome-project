@@ -774,7 +774,7 @@ print('The sum of the ages:', sum(people.values())) # if there's a string in the
 
 #create stores
 freelancers = {'name':'Freelancing Shop', 'brian':70, 'black night':20, 'biccus diccus':100, 'grim reaper':500, 'minstrel':-15}
-antiques = {'name':'Antique Shop', 'french castle':400, 'wooden grail':3, 'scythe':150}
+antiques = {'name':'Antique Shop', 'french castle':400, 'wooden grail':3, 'scythe':150, 'catapult':75, 'german joke':5}
 pet_shop = {'name':'Pet Shop', 'blue parrot':10, 'white rabbit':5, 'newt': 2}
 
 # #create an dempty shopping cart
@@ -787,14 +787,40 @@ pet_shop = {'name':'Pet Shop', 'blue parrot':10, 'white rabbit':5, 'newt': 2}
 #     cart.update({insert KEYVAL: VALUE}) # use pop...
 # print(f'You Purchased {ITEMS PURCHASED} Today it is all free. Have a nice day of mayhem!')
 
+#morning inventory
+department_store = {}
+for department in (freelancers, antiques, pet_shop):
+    department_store.update(department)
+department_store.pop('name')
+print('Morning inventory of stores', sorted(department_store.items()))
+print('-----------------')
 #create an dempty shopping cart
 cart = {}
+#create pursue with 1000Gp
+purse = 1000
+buy_items1 = ''
 #loop through stores/dicts
 for shop in (freelancers, antiques, pet_shop):
     #inputbox to show what you can buy...capture text string of what was bought...make lowercase
-    buy_item = input(f'\nWelcome to {shop["name"]}! what do you want to buy:\n{shop}\nWrite your order here: ').lower()
+    buy_item = input(f'\nWelcome to {shop["name"]}! (type exit to exit store)\nWhat do you want to buy:\n{shop}\nWrite your order here: ').lower()
+    #exit on exit typed or buying nonexistant item
+    if buy_item == 'exit':
+        continue
+    if buy_item not in shop:
+        continue
+    #update string
+    buy_items1 = buy_items1 + f'{buy_item}:{shop[buy_item]} Gp, '
     #update the cart
     cart.update({buy_item:shop.pop(buy_item)}) # use pop...
-    # cart[buy_item] = shop.pop(buy_item) -> the above code also can be written like this
+    # cart[buy_item] = shop.pop(buy_item) -> the above code also can be written like this line
     buy_items = ", ".join(list(cart.keys()))
-print(f'\nYou Purchased {buy_items}. Today it is all free. Have a nice day of mayhem!\n')
+    if buy_items is None:
+        continue
+    total_sum = sum(cart.values())
+print(f'\nYou Purchased {buy_items}. Your total is {total_sum} Gp. Your change is {purse - total_sum} Gp. Have a nice day of mayhem!')
+print(f'You Purchased {buy_items1}. Your total is {total_sum} Gp. Your change is {purse - total_sum} Gp. Have a nice day of mayhem!\n')
+#evening inventory
+department_store_after = {**freelancers, **antiques, **pet_shop} #pyth 3.5
+department_store_after.pop('name')
+print('-----------------')
+print('Evening inventory of stores', sorted(department_store_after.items()))
